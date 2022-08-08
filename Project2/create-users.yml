@@ -1,0 +1,11 @@
+- name: Create users
+  hosts:
+    - all
+  vars:
+    - secret.yml
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ username }}"
+        password: "{{ password }}"
+      become: true
